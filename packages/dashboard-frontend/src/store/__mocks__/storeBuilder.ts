@@ -98,6 +98,10 @@ export class FakeStoreBuilder {
         applications: [],
       },
     },
+    environmentVariables: {
+      environmentVariables: [],
+      isLoading: false,
+    },
     factoryResolver: {
       isLoading: false,
       resolver: {},

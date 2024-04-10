@@ -105,5 +105,6 @@ export enum UserPreferencesTab {
   GIT_SERVICES = 'GitServices',
   GITCONFIG = 'Gitconfig',
   PERSONAL_ACCESS_TOKENS = 'PersonalAccessTokens',
+  ENVIRONMENT_VARIABLES = 'EnvironmentVariables',
   SSH_KEYS = 'SshKeys',
 }

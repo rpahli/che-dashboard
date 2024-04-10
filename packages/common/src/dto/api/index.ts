@@ -39,13 +39,20 @@ export type PersonalAccessToken = {
   gitProviderEndpoint: string;
 } & (
   | {
-      gitProvider: Exclude<GitProvider, 'azure-devops'>;
-    }
+  gitProvider: Exclude<GitProvider, 'azure-devops'>;
+}
   | {
-      gitProvider: Extract<GitProvider, 'azure-devops'>;
-      gitProviderOrganization: string;
-    }
-);
+  gitProvider: Extract<GitProvider, 'azure-devops'>;
+  gitProviderOrganization: string;
+}
+  );
+
+export type EnvironmentVariable = {
+  cheUserId: string;
+  variableName: string;
+  variableKey: string;
+  variableData: string;
+}
 
 export type SshKey = {
   creationTimestamp?: Date;
@@ -151,8 +158,10 @@ export interface IUserProfile {
   email: string;
   username: string;
 }
+
 export interface IDevWorkspacePreferences {
   'skip-authorisation': GitProvider[];
+
   [key: string]: string | string[];
 }
 

@@ -308,6 +308,26 @@ export const personalAccessTokenBodySchema: JSONSchema7 = {
   required: ['cheUserId', 'tokenName', 'tokenData', 'gitProviderEndpoint', 'gitProvider'],
 };
 
+
+export const environmentVariableBodySchema: JSONSchema7 = {
+  type: 'object',
+  properties: {
+    cheUserId: {
+      type: 'string',
+    },
+    variableName: {
+      type: 'string',
+    },
+    variableKey: {
+      type: 'string',
+    },
+    variableData: {
+      type: 'string',
+    },
+  },
+  required: ['cheUserId', 'variableName', 'variableKey', 'variableData'],
+};
+
 export const personalAccessTokenParamsSchema: JSONSchema7 = {
   type: 'object',
   properties: {
@@ -319,6 +339,19 @@ export const personalAccessTokenParamsSchema: JSONSchema7 = {
     },
   },
   required: ['namespace', 'tokenName'],
+};
+
+export const environmentVariableParamsSchema: JSONSchema7 = {
+  type: 'object',
+  properties: {
+    namespace: {
+      type: 'string',
+    },
+    variableName: {
+      type: 'string',
+    },
+  },
+  required: ['namespace', 'variableName'],
 };
 
 export const sshKeyBodySchema: JSONSchema7 = {

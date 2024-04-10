@@ -31,6 +31,7 @@ import * as PodsStore from '@/store/Pods';
 import * as LogsStore from '@/store/Pods/Logs';
 import * as SanityCheckStore from '@/store/SanityCheck';
 import * as DwServerConfigStore from '@/store/ServerConfig';
+import * as EnvironmentVariablesStore from '@/store/EnvironmentVariables';
 import * as SshKeysStore from '@/store/SshKeys';
 import * as UserIdStore from '@/store/User/Id';
 import * as UserProfileStore from '@/store/User/Profile';
@@ -55,6 +56,7 @@ export interface AppState {
   infrastructureNamespaces: InfrastructureNamespacesStore.State;
   logs: LogsStore.State;
   personalAccessToken: PersonalAccessToken.State;
+  environmentVariables: EnvironmentVariablesStore.State;
   plugins: PluginsStore.State;
   pods: PodsStore.State;
   sanityCheck: SanityCheckStore.State;
@@ -81,6 +83,7 @@ export const reducers = {
   infrastructureNamespaces: InfrastructureNamespacesStore.reducer,
   logs: LogsStore.reducer,
   personalAccessToken: PersonalAccessToken.reducer,
+  environmentVariables: EnvironmentVariablesStore.reducer,
   plugins: PluginsStore.reducer,
   pods: PodsStore.reducer,
   sanityCheck: SanityCheckStore.reducer,

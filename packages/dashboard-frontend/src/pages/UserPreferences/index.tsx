@@ -26,6 +26,7 @@ import { UserPreferencesTab } from '@/services/helpers/types';
 import { AppState } from '@/store';
 import { actionCreators } from '@/store/GitOauthConfig';
 import { selectIsLoading } from '@/store/GitOauthConfig/selectors';
+import EnvironmentVariables from '@/pages/UserPreferences/EnvironmentVariables';
 
 export type Props = {
   history: History;
@@ -58,6 +59,7 @@ export class UserPreferences extends React.PureComponent<Props, State> {
           tab === UserPreferencesTab.GITCONFIG ||
           tab === UserPreferencesTab.GIT_SERVICES ||
           tab === UserPreferencesTab.PERSONAL_ACCESS_TOKENS ||
+          tab === UserPreferencesTab.ENVIRONMENT_VARIABLES ||
           tab === UserPreferencesTab.SSH_KEYS)
       ) {
         return searchParam.get('tab') as UserPreferencesTab;
@@ -107,6 +109,9 @@ export class UserPreferences extends React.PureComponent<Props, State> {
           </Tab>
           <Tab eventKey={UserPreferencesTab.GITCONFIG} title="Gitconfig">
             <GitConfig />
+          </Tab>
+          <Tab eventKey={UserPreferencesTab.ENVIRONMENT_VARIABLES} title="Environment Variables">
+            <EnvironmentVariables />
           </Tab>
           <Tab eventKey={UserPreferencesTab.SSH_KEYS} title="SSH Keys">
             <SshKeys />

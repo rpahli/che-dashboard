@@ -1,1 +1,22 @@
-{}
+{
+    "name": "iPEN Dev Spaces",
+    "icon": "icon.png",
+    "logo": {
+        "dark": "logo-light.png",
+        "light": "logo-dark.png"
+    },
+    "welcome": {
+        "title": "Welcome to Your Workspace",
+        "links": ["website", "documentation"]
+    },
+    "links": {
+        "website": {
+            "name": "Discover Red Hat OpenShift Dev Spaces",
+            "url": "https://developers.redhat.com/products/openshift-dev-spaces/overview"
+        },
+        "documentation": {
+            "name": "Browse Documentation",
+            "url": "https://www.redhat.com/docs"
+        }
+    }
+}

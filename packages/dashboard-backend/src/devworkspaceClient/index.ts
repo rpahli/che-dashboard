@@ -32,7 +32,7 @@ import {
   IDevWorkspaceClient,
   IDevWorkspacePreferencesApi,
   IDevWorkspaceTemplateApi,
-  IDockerConfigApi,
+  IDockerConfigApi, IEnvironmentVariablesApi,
   IEventApi,
   IGettingStartedSampleApi,
   IGitConfigApi,
@@ -45,6 +45,8 @@ import {
   IShhKeysApi,
   IUserProfileApi,
 } from '@/devworkspaceClient/types';
+import { registerEnvironmentVariablesRoutes } from '@/routes/api/environmentVariables';
+import { EnvironmentVariablesService } from '@/devworkspaceClient/services/environmentVariablesApi';
 
 export * from './types';
 
@@ -97,6 +99,10 @@ export class DevWorkspaceClient implements IDevWorkspaceClient {
 
   get personalAccessTokenApi(): IPersonalAccessTokenApi {
     return new PersonalAccessTokenService(this.kubeConfig);
+  }
+
+  get environmentVariablesApi(): IEnvironmentVariablesApi {
+    return new EnvironmentVariablesService(this.kubeConfig);
   }
 
   get gitConfigApi(): IGitConfigApi {

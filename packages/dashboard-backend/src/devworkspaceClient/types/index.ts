@@ -412,6 +412,34 @@ export interface IPersonalAccessTokenApi {
   delete(namespace: string, name: string): Promise<void>;
 }
 
+export interface IEnvironmentVariablesApi {
+  /**
+   * Reads all the PAT secrets from the specified namespace.
+   */
+  listInNamespace(namespace: string): Promise<Array<api.EnvironmentVariable>>;
+
+  /**
+   * Creates a PAT secret.
+   */
+  create(
+    namespace: string,
+    environmentVariable: api.EnvironmentVariable,
+  ): Promise<api.EnvironmentVariable>;
+
+  /**
+   * "Updates" an existing PAT secret.
+   */
+  replace(
+    namespace: string,
+    environmentVariable: api.EnvironmentVariable,
+  ): Promise<api.EnvironmentVariable>;
+
+  /**
+   * Deletes a PAT secret.
+   */
+  delete(namespace: string, name: string): Promise<void>;
+}
+
 export interface IDevWorkspaceClient {
   devWorkspaceTemplateApi: IDevWorkspaceTemplateApi;
   devworkspaceApi: IDevWorkspaceApi;
